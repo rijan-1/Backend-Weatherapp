@@ -1,0 +1,22 @@
+[
+  {
+    "username": "Nish",
+    "hashed_password": "$2b$12$gIpCNtqO9/TIfm2I2pKUAuaQmWpoKont3WLFtHSGbjQAPM72PjZc6"
+  },
+  {
+    "username": "james",
+    "hashed_password": "$2b$12$HVs84AWZMHp.rJqF.gbi4emeun0aiAnPPD3D0BrkMJ9xs3ARRfWXS"
+  },
+  {
+    "username": "roger",
+    "hashed_password": "$2b$12$vXN2iySgrY3zVmTneFNncePkXD5cIYNEW4EkMZSEPk0Re.bm/PgxW"
+  },
+  {
+    "username": "daddy",
+    "hashed_password": "$2b$12$YfgcqrnNyoD1IU7omZF57.sW7jRio.JHk6Z.VegIhtMpS93D5ynbS"
+  },
+  {
+    "username": "whathe",
+    "hashed_password": "$2b$12$jzSqWbUxJx23LYupkJICGeevWaf7crrNYH.YVrpotjxUSD6kRHArC"
+  }
+]
