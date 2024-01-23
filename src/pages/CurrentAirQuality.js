@@ -6,7 +6,7 @@ import {MyContext} from '../App'
 import { useNavigate  } from 'react-router-dom';
 
 export const CurrentAirQuality = () => {
-    const {GlobalCityName, isLoggedIn} = useContext(MyContext)
+    const {GlobalCityName, isLoggedIn,HealthAirQuality, setHealthAirQuality} = useContext(MyContext)
 
     const [CoordnatesState,setCoordnatesState] = useState({lat: 51.5073219, lon: -0.1276474})
     const [currentAirQualityState, setAirQualityState] = useState({})
@@ -32,6 +32,7 @@ export const CurrentAirQuality = () => {
     useEffect(() => {
         const HandleCurrentAirQualkityData = async () => {
           try {
+            console.log("test")
             const ExtractCurrentAirQuality = await CurrentAirQualityAPI(CoordnatesState);
     
             if (ExtractCurrentAirQuality.status === 400) {
@@ -41,6 +42,10 @@ export const CurrentAirQuality = () => {
               }
           
             setAirQualityState(ExtractCurrentAirQuality);
+            setHealthAirQuality(ExtractCurrentAirQuality)
+           
+            console.log("test")
+            
           } catch (error) {
             // Handle other errors, e.g., network issues
             console.log('Error fetching air quality data: ');

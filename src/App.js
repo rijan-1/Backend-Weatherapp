@@ -20,8 +20,10 @@ const App = () => {
 
   const [GlobalCityName, setGlobalCityName] = useState('London')
   const [units, setUnits] = useState('metric')
+  const [HealthTemp, setHealthTemp] = useState(0 )
+  const [HealthAirQuality, setHealthAirQuality] = useState({})
   return (
-    <MyContext.Provider value={{GlobalCityName, setGlobalCityName, units, setUnits, isLoggedIn, setIsLoggedIn}}>
+    <MyContext.Provider value={{GlobalCityName, setGlobalCityName, units, setUnits, isLoggedIn, setIsLoggedIn,HealthTemp, setHealthTemp,HealthAirQuality, setHealthAirQuality}}>
     <BrowserRouter >
     <NavBar/>
     <Routes>

@@ -14,13 +14,15 @@ import {CurrentWeather} from  '../WeatherService'
 
 import { useEffect ,useState} from 'react'; 
 
-import { MyContext } from '../App'; 
+
 
 import { useContext } from 'react'; 
 
 import { ExtractIcon } from '../WeatherService'; 
-
+import { MyContext } from '../App';
 export const Home = () => { 
+
+
 
    
 
@@ -34,7 +36,7 @@ export const Home = () => {
 
 const [Bg, setBg] = useState({coldweather}) 
 
-const {setGlobalCityName, GlobalCityName, units, setUnits} = useContext(MyContext) 
+const {setGlobalCityName, GlobalCityName, units, setUnits,setHealthTemp,HealthTemp} = useContext(MyContext) 
 
     
 
@@ -49,6 +51,12 @@ useEffect(() => {
       const data = await CurrentWeather(GlobalCityName, units); 
 
       setWeatherNow(data); 
+     
+     
+  
+   
+     
+ 
 
       
 
@@ -85,9 +93,10 @@ useEffect(() => {
       setBg(veryhot) 
 
     } 
+    setHealthTemp(data.temp)
 
    
-
+ 
   }catch(error){ 
 
       setError(error.message) 
@@ -96,11 +105,13 @@ useEffect(() => {
 
     }} 
 
+  
    
 
     CurrentWeatherData(); 
 
   }, [units, GlobalCityName]); 
+ 
 
   return ( 
 
