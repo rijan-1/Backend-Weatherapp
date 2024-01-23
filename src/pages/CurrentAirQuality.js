@@ -32,7 +32,7 @@ export const CurrentAirQuality = () => {
     useEffect(() => {
         const HandleCurrentAirQualkityData = async () => {
           try {
-            console.log("test")
+       
             const ExtractCurrentAirQuality = await CurrentAirQualityAPI(CoordnatesState);
     
             if (ExtractCurrentAirQuality.status === 400) {
@@ -44,7 +44,7 @@ export const CurrentAirQuality = () => {
             setAirQualityState(ExtractCurrentAirQuality);
             setHealthAirQuality(ExtractCurrentAirQuality)
            
-            console.log("test")
+         
             
           } catch (error) {
             // Handle other errors, e.g., network issues
