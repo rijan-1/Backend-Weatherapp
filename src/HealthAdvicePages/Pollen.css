@@ -1,0 +1,34 @@
+.pollenpicturebackground{
+    background-size: cover;
+    width: 100%;
+    height: 1200px;
+    background-image: url('https://images.pexels.com/photos/54300/pexels-photo-54300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    position: absolute;
+    z-index: -3;
+}
+
+.cover{
+    background-size: cover;
+    height: 1200px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.PollenContainer{
+    position: absolute;
+    display: flex;
+   justify-content: center;
+    left: 20%;
+    color: white;
+    top :20%;
+    background-color: rgba(0,0,0,0.8);
+    width: 60%;
+    height: 80%;
+    border-radius: 40px;
+}
+
+.Pollendescription{
+    color: white;
+    width: 80%;
+    position: relative;
+    top: 20%
+}

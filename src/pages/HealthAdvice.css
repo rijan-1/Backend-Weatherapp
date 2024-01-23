@@ -5,7 +5,14 @@
     width:100%;
     z-index: -10;
 }
-
+.moredetailcss{
+    background-color: transparent;
+    position: relative;
+    left: 65%;
+    bottom: 30%;
+    color: white;
+    border-radius: 10px;
+}
 .HealthAdviceSection{
     display:flex;
     justify-content: center;

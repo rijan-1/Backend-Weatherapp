@@ -8,7 +8,7 @@ import { CurrentAirQuality } from './pages/CurrentAirQuality';
 import {HealthAdvice} from './pages/HealthAdvice'
 import {RegistrationForm} from './Login&Register/Register'
 import {LoginForm} from './Login&Register/Login'
-
+import { Pollen } from './HealthAdvicePages/Pollen';
 export const MyContext = createContext()
 
 
@@ -36,6 +36,7 @@ const App = () => {
       <Route path='/pages/HealthAdvice' element={<HealthAdvice/>}/>
       <Route path='/Register' element={<RegistrationForm/>}/>
       <Route path='/Login' element={<LoginForm/>}/>
+      <Route path='/Pollen' element={<Pollen/>}/>
       </Routes>
       </BrowserRouter>
 

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
 import { MyContext } from '../App';
 import {CurrentWeather} from '../WeatherService'
+import { Link } from 'react-router-dom';
 export const HealthAdvice = () => {
   const [CoordnatesState,setCoordnatesState] = useState({lat: 51.5073219, lon: -0.1276474})
   const [currentAirQualityState, setAirQualityState] = useState({})
@@ -206,6 +207,7 @@ if (!isLoggedIn){
             <h2>Pollen </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:Colorpollen, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{pollen}</h2>
+            <Link to='/Pollen'><button className='moredetailcss'>more detail</button></Link>
 
             </div>
             <div className='HealthAdviceBoxes'>
@@ -213,6 +215,7 @@ if (!isLoggedIn){
             <h2>Cold urticaria </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorColdurticariaState, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{ColdurticariaState}</h2>
+            <button className='moredetailcss'>more detail</button>
               
             </div>
             <div className='HealthAdviceBoxes'>
@@ -220,6 +223,7 @@ if (!isLoggedIn){
             <h2>Asthma </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:Colorasthma, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{asthma}</h2>
+            <button className='moredetailcss'>more detail</button>
               
             </div>
             
@@ -228,6 +232,7 @@ if (!isLoggedIn){
             <h2>Allergic rhinitis</h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorallergicRithics, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{allergicRithics}</h2>
+            <button className='moredetailcss'>more detail</button>
 
             </div>
         
@@ -250,6 +255,7 @@ if (!isLoggedIn){
             <h2> Flu</h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorFluState, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{FluState}</h2>
+            <button className='moredetailcss'>more detail</button>
 
             </div>
             <div className='HealthAdviceBoxes'>
@@ -257,6 +263,7 @@ if (!isLoggedIn){
             <h2>Hypothermia </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorHypothermiaState, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{HypothermiaState}</h2>
+            <button className='moredetailcss'>more detail</button>
               
             </div>
             <div className='HealthAdviceBoxes'>
@@ -264,6 +271,7 @@ if (!isLoggedIn){
             <h2>Frostbite </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorfrostBite, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{frostBite}</h2>
+            <button className='moredetailcss'>more detail</button>
               
             </div>
             
@@ -272,6 +280,7 @@ if (!isLoggedIn){
             <h2>Heat cramps</h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:Colorheatcramps, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{heatcramps}</h2>
+            <button className='moredetailcss'>more detail</button>
 
             </div>
         

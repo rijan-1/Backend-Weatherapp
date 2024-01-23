@@ -1,11 +1,11 @@
 import './Register.css'
 import React, { useState } from 'react';
-
+import {useNavigate} from 'react-router-dom'
 export const RegistrationForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [sccessful, setSuccessfull] = useState('')
-
+const navigate = useNavigate()
   const handleRegister = async () => {
     // Send registration data to the FastAPI backend
     const response = await fetch('http://localhost:8000/register/', {
@@ -20,6 +20,7 @@ export const RegistrationForm = () => {
       const user = await response.json();
       console.log('Registration successful:', user);
       setSuccessfull('Registeration Successful')
+      return navigate('/Login')
     } else {
       console.error('Registration failed');
       setSuccessfull('')
