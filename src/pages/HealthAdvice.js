@@ -193,7 +193,9 @@ if (!isLoggedIn){
 
   return (
     <div className='HealthAdviceBakcground'>
+      <div className='Healthadvicebackgroundcopver'>
       <div className='HealthAdvicecoverSection' style={{position:'absolute', top: '20%'}}>
+
         <h1 className='allergytitle'>Allergies- Risk</h1>
       
         <div className='HealthAdviceSection'>
@@ -212,10 +214,10 @@ if (!isLoggedIn){
             </div>
             <div className='HealthAdviceBoxes'>
             <GiTumbleweed  />
-            <h2>Cold urticaria </h2>
+            <h2>Cold hives </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorColdurticariaState, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{ColdurticariaState}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/ColdHives'><button className='moredetailcss'>more detail</button></Link>
               
             </div>
             <div className='HealthAdviceBoxes'>
@@ -223,16 +225,16 @@ if (!isLoggedIn){
             <h2>Asthma </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:Colorasthma, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{asthma}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/Asthma'><button className='moredetailcss'>more detail</button></Link>
               
             </div>
             
             <div className='HealthAdviceBoxes'>
             <GiGrass />
-            <h2>Allergic rhinitis</h2>
+            <h2>Eye Allergy</h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorallergicRithics, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{allergicRithics}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/EyeAllergy'><button className='moredetailcss'>more detail</button></Link>
 
             </div>
         
@@ -255,7 +257,7 @@ if (!isLoggedIn){
             <h2> Flu</h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorFluState, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{FluState}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/Flu'><button className='moredetailcss'>more detail</button></Link>
 
             </div>
             <div className='HealthAdviceBoxes'>
@@ -263,7 +265,7 @@ if (!isLoggedIn){
             <h2>Hypothermia </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorHypothermiaState, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{HypothermiaState}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/Hypothermia'><button className='moredetailcss'>more detail</button></Link>
               
             </div>
             <div className='HealthAdviceBoxes'>
@@ -271,7 +273,7 @@ if (!isLoggedIn){
             <h2>Frostbite </h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:ColorfrostBite, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{frostBite}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/FrostBite'><button className='moredetailcss'>more detail</button></Link>
               
             </div>
             
@@ -280,7 +282,7 @@ if (!isLoggedIn){
             <h2>Heat cramps</h2>
             <hr style={{width: '30%', height:'5%', backgroundColor:Colorheatcramps, marginLeft:'0px',borderWidth:'0px'}}/>
             <h2>{heatcramps}</h2>
-            <button className='moredetailcss'>more detail</button>
+            <Link to='/HeatCramps'><button className='moredetailcss'>more detail</button></Link>
 
             </div>
         
@@ -288,7 +290,7 @@ if (!isLoggedIn){
 
         </div>
 
-      </div>
+      </div></div>
     </div>
   )
 }

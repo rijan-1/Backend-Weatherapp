@@ -9,6 +9,13 @@ import {HealthAdvice} from './pages/HealthAdvice'
 import {RegistrationForm} from './Login&Register/Register'
 import {LoginForm} from './Login&Register/Login'
 import { Pollen } from './HealthAdvicePages/Pollen';
+import { ColdHives } from './HealthAdvicePages/ColdHives';
+import { Asthma } from './HealthAdvicePages/Asthma';
+import { EyeAllergy } from './HealthAdvicePages/EyeAllergy';
+import { Flu } from './HealthAdvicePages/Flu';
+import { Hypothermia } from './HealthAdvicePages/Hypothermia';
+import { FrostBite } from './HealthAdvicePages/Frostbite';
+import { HeatCramps } from './HealthAdvicePages/HeatCramp';
 export const MyContext = createContext()
 
 
@@ -37,6 +44,15 @@ const App = () => {
       <Route path='/Register' element={<RegistrationForm/>}/>
       <Route path='/Login' element={<LoginForm/>}/>
       <Route path='/Pollen' element={<Pollen/>}/>
+      <Route path='/ColdHives' element={<ColdHives/>}/>
+      <Route path='/Asthma' element={<Asthma/>}/>
+      <Route path='/EyeAllergy' element={<EyeAllergy/>}/>
+      <Route path='/Flu' element={<Flu/>}/>
+      <Route path='/Hypothermia' element={<Hypothermia/>}/>
+      <Route path='/FrostBite' element={<FrostBite/>}/>
+      <Route path='/HeatCramps' element={<HeatCramps/>}/>
+
+
       </Routes>
       </BrowserRouter>
 

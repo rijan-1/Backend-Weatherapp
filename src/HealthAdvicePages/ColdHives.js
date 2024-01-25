@@ -1,23 +1,23 @@
 import './Pollen.css'
 
-export const Pollen = () => {
+export const ColdHives = () => {
 
   return (
-    <div className='pollenpicturebackground'>
+    <div className='coldhivespicturebackground'>
 
       <div className='cover'>
         <div className='PollenContainer'>
-          <h1 style={{position:'absolute', left:'40%'}}>Pollen</h1>
+          <h1 style={{position:'absolute', left:'40%'}}>Cold Hives</h1>
      
         <div className='Pollendescription'>
-       <h2> What are pollen allergies?</h2>
+       <h2> What are Cold Hives?</h2>
 
 
 <p>Pollen is made up of tiny particles which are released by plants and trees as part of their reproductive cycle. It is an extremely fine powder and is spread by insects and the wind.
 
 Pollen can cause significant irritation and inflammation in people who are allergic to it. Pollen can be inhaled by humans and animals. For those with an allergy, pollen triggers the antibody immunoglobulin E, which creates mucus and leads to symptoms such as congestion and sneezing.
 </p>
-<h2>How to best prevent symptoms of Pollen allergy?</h2>
+<h2>How to best prevent symptoms of Cold Hives?</h2>
 <p>
 Hay fever is the most common name for pollen allergy and is most commonly caused by grass pollens, although other pollens can also trigger the symptoms. The symptoms are caused when immune system reacts to pollen in the body to produce histamine and other chemicals.
 
@@ -31,7 +31,7 @@ Depending on the time of year, the type of pollen in the air will be different. 
 
 Hay fever symptoms usually appear when the pollen count, which is a measure of the number of grains of pollen in one cubic metre of air, exceeds 50. The weather conditions affect how much pollen is released and spread around. On humid and windy days, pollen spreads easily but on rainy days, pollen can be cleared from the air. On sunny days, the pollen count is highest in the early evening and that's when you are most likely to suffer from hay fever symptoms.
 </p>
-<h2>Treatments for Pollen allergy</h2>
+<h2>Treatments for Cold Hives</h2>
 <p>
 Although there is currently no cure for hay fever, most people are able to relieve their symptoms with treatment. The most effective way to prevent hay fever is to avoid exposure to pollen but this is almost impossible, particularly during the summer months. Instead, many people rely on antihistamines, which can prevent the allergic reaction from happening, and corticosteroids, which reduce any inflammation and swelling caused by the pollen allergy. Eye drops can also help. Over-the-counter treatments should be sufficient to ease your hay fever symptoms, but if you are experiencing more severe symptoms, you should speak to your GP.
 </p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect , useContext} from 'react';
 import './Login.css';
 import { MyContext } from '../App';
-
+import './Register.css'
 export const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -63,7 +63,7 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
 
   return (
     <div className='LoginpagebackGround'>
-      <div className='LoginPagesection'>
+      <div className='RegisterFormcss'>
         {isLoggedIn ? (
           <div>
             <h1>Welcome, {username}!</h1>
@@ -73,21 +73,22 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
           </div>
         ) : (
           <div>
-            <h1>Login</h1>
+            <div className='RegisterFormcss'>
+            <h1 className='RegisterHeading'>Login</h1>
             <input
               type="text"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-            />
+            required/>
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
+            required/>
             <button onClick={handleLogin}>Login</button>
-          </div>
+          </div></div>
         )}
       </div>
     </div>
