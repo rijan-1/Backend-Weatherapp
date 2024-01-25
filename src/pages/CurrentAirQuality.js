@@ -11,8 +11,28 @@ export const CurrentAirQuality = () => {
     const [CoordnatesState,setCoordnatesState] = useState({lat: 51.5073219, lon: -0.1276474})
     const [currentAirQualityState, setAirQualityState] = useState({})
     const [aqivalueState, setaqivalueState] = useState('')
+    const [airQulaityBackground, setAirQualityBackground] = useState('')
 
-    const VeryPolutated = 'https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+
+
+    const HighPolution = 'https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    const mediumPollution ='https://images.pexels.com/photos/12276056/pexels-photo-12276056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    const lowpollution = 'https://images.pexels.com/photos/5745683/pexels-photo-5745683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+
+
+    useEffect(()=>{
+        const airQualityBakcgroundhandle=()=>{
+            if (currentAirQualityState.aqi===1){
+                setAirQualityBackground(lowpollution)
+
+            }else if (currentAirQualityState.aqi>=2 &&currentAirQualityState.aqi<=3){
+                setAirQualityBackground(mediumPollution)
+            }else if(currentAirQualityState.aqi>=4 &&currentAirQualityState.aqi<=5){
+                setAirQualityBackground(HighPolution)
+            }
+        }
+        airQualityBakcgroundhandle()
+    },[currentAirQualityState.aqi])
 
     useEffect(()=>{
 
@@ -55,6 +75,7 @@ export const CurrentAirQuality = () => {
       
         HandleCurrentAirQualkityData();
       }, [CoordnatesState]);
+
 const airqualityValue = ()=>{
       {if (currentAirQualityState.aqi===1){
         setaqivalueState('Good')
@@ -77,7 +98,7 @@ if (!isLoggedIn) {
     return navigate("/Login") ;
   }
   return (
-    <div className='AirQualityBackGround' style={{backgroundImage:`url(${VeryPolutated})`}}>
+    <div className='AirQualityBackGround' style={{backgroundImage:`url(${airQulaityBackground})`}}>
 
             <div className='AirqualityMainContent'>
                 <div className='Airqualityttitle'>

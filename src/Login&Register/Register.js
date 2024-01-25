@@ -1,13 +1,15 @@
 import './Register.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {Input} from "@nextui-org/react";
 export const RegistrationForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [successful, setSuccessful] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+
 
   const handleRegister = async () => {
     // Check if username or password is empty
@@ -39,7 +41,8 @@ export const RegistrationForm = () => {
   };
 
   return (
-    <div className='RegisterBakcground'>
+    <div className='RegisterBakcground' >
+      <div style={{height:'100%', width:'100%',backgroundColor:'rgba(0,0,0,0.2)'}}>
       <div className='RegisterFormcss'>
         <h1 className='RegisterHeading'>Registration</h1>
         <input
@@ -48,7 +51,7 @@ export const RegistrationForm = () => {
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <input
+       <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
@@ -57,7 +60,7 @@ export const RegistrationForm = () => {
         <button className='RegisterButton' onClick={handleRegister}>Register</button>
         {error && <p className='ErrorMessage'>{error}</p>}
         {successful && <p className='SuccessMessage'>{successful}</p>}
-      </div>
+      </div></div>
     </div>
   );
 };

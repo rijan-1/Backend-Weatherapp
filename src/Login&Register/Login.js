@@ -1,7 +1,8 @@
 import React, { useState, useEffect , useContext} from 'react';
-import './Login.css';
+
 import { MyContext } from '../App';
 import './Register.css'
+import './Login'
 export const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -62,7 +63,7 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
   };
 
   return (
-    <div className='LoginpagebackGround'>
+    <div className='RegisterBakcground'>
       <div className='RegisterFormcss'>
         {isLoggedIn ? (
           <div>
@@ -73,22 +74,23 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
           </div>
         ) : (
           <div>
-            <div className='RegisterFormcss'>
+            <div className='LRegisterFormcss' >
+            <div style={{height:'400px', width:'100%',backgroundColor:'rgba(0,0,0,0.4)',borderRadius:'20px', paddingTop:'15px'}}>
             <h1 className='RegisterHeading'>Login</h1>
-            <input
+            <input  style={{position:'relative', top:'15px'}}
               type="text"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-            required/>
-            <input
+            required />
+            <input style={{position:'relative', top:'47px'}}
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             required/>
-            <button onClick={handleLogin}>Login</button>
-          </div></div>
+            <button style={{position:'relative', top:'87px'}} className='RegisterButton' onClick={handleLogin}>Login</button>
+          </div></div></div>
         )}
       </div>
     </div>

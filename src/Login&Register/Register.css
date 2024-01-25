@@ -1,7 +1,7 @@
 .RegisterBakcground{
-    background-color: aliceblue;
+    background-image: url('https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
-    height: 1000px
+    height: 100vh;
 }
 
 .RegisterFormcss{
@@ -12,27 +12,39 @@
     flex-direction: column;
     gap: 30px;
     width:40%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: transparent;
     border-radius: 30px;
+    height: 50%;
+
    
     
     
 }
+
+
 .RegisterButton{
     width: 30%;
     position: relative;
-    left: 30%
+    left: 30%;
+    border-radius: 15px;
+    border-width: 0px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-weight: 800;
 }
 .RegisterHeading{
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
 }
 .RegisterFormcss input{
     position: relative;
-    left: 20%;
-    height: 30px;
-    width: 60%;
+    left: 15%;
+    height: 35px;
+    width: 75%;
     border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-width: 0px;
+   
     
 }

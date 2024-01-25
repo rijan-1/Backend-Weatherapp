@@ -86,8 +86,7 @@ useEffect(() => {
           setColorAllergicRithics('red')
         }
 
-        
-        console.log(airQuality)
+ 
         
       } catch (error) {
         // Handle other errors, e.g., network issues
@@ -106,7 +105,7 @@ useEffect(() => {
     const handleHealthAdviceData = async()=>{
 
       const response = await CurrentWeather(GlobalCityName, units)
-      console.log(HealthAirQuality)
+    
       const temp = response.temp
       
 
