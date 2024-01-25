@@ -6,7 +6,7 @@ import {MyContext} from '../App'
 import { useNavigate  } from 'react-router-dom';
 
 export const CurrentAirQuality = () => {
-    const {GlobalCityName, isLoggedIn,HealthAirQuality, setHealthAirQuality} = useContext(MyContext)
+    const {GlobalCityName, isLoggedIn,HealthAirQuality, setHealthAirQuality,setGlobalCityName} = useContext(MyContext)
 
     const [CoordnatesState,setCoordnatesState] = useState({lat: 51.5073219, lon: -0.1276474})
     const [currentAirQualityState, setAirQualityState] = useState({})
@@ -37,17 +37,24 @@ export const CurrentAirQuality = () => {
     useEffect(()=>{
 
         const HandleGeoCodingAPI = async()=>{
+            try{
             const CoordnatesWhole = await GeoCodingApi(GlobalCityName)
            
      
          
             setCoordnatesState(CoordnatesWhole)
             
-            
+            }catch(error){
+                console.log('error')
+                setGlobalCityName('London')
+
+            }
         }
         HandleGeoCodingAPI()
 
-    },[GlobalCityName])
+    },[
+        
+        GlobalCityName])
 
     useEffect(() => {
         const HandleCurrentAirQualkityData = async () => {

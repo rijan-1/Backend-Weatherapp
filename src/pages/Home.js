@@ -26,8 +26,7 @@ export const Home = () => {
 
    
 
-    
-
+ 
     const [WeatherNow, setWeatherNow] = useState([]) 
 
    const [icon, setIcon] = useState(null) 
@@ -40,7 +39,8 @@ const {setGlobalCityName, GlobalCityName, units, setUnits,setHealthTemp,HealthTe
 
     
 
-     
+        
+   const [citystate, setcitystate] = useState(GlobalCityName)
 
 useEffect(() => { 
 
@@ -51,26 +51,15 @@ useEffect(() => {
       const data = await CurrentWeather(GlobalCityName, units); 
 
       setWeatherNow(data); 
-     
-     
-  
-   
-     
- 
 
-      
-
-   
 
       const subZero = units ==='metric' ? 0: 32; 
-
-   
 
       const lowerthreshold = units === 'metric' ? 10 : 50; 
 
       const higherthreshhold = units === 'metric'? 25 : 75 
 
-   
+  
 
       if (data.temp < subZero) { 
 
@@ -87,7 +76,6 @@ useEffect(() => {
         setBg(hotweather); 
 
        
-
     }else if (data.temp > higherthreshhold){ 
 
       setBg(veryhot) 
@@ -95,22 +83,20 @@ useEffect(() => {
     } 
     setHealthTemp(data.temp)
 
-   
+ 
  
   }catch(error){ 
 
-      setError(error.message) 
+      console.log('idk')
+      setcitystate('London')
 
        
-
     }} 
 
   
-   
-
     CurrentWeatherData(); 
 
-  }, [units, GlobalCityName]); 
+  }, [units, citystate]); 
  
 
   return ( 

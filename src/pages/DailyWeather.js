@@ -29,7 +29,7 @@ export const DailyWeatherFunction = () => {
 
   const [countryNameState, setCountryNameState] = useState(''); 
 
-  const { GlobalCityName, units } = useContext(MyContext); 
+  const { setGlobalCityName,GlobalCityName, units } = useContext(MyContext); 
   const [healthAdviceMessage, setHealthAdviceMessage] = useState('')
 
   const handleSetMessage =()=>{
@@ -54,6 +54,8 @@ useEffect(()=>{
         setCountryNameState(country);
       } catch (error) {
         console.error('An error occurred:', error);
+        setGlobalCityName('London')
+        
         // You can handle the error here, such as setting an error state or displaying an error message.
       }
     };

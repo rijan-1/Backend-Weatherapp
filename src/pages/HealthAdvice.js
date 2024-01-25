@@ -35,6 +35,10 @@ const navigate = useNavigate()
   useEffect(()=>{
 
     const HandleGeoCodingAPI = async()=>{
+      if (GlobalCityName===''){
+        setGlobalCityName('London')
+      }
+      try{
         const CoordnatesWhole = await GeoCodingApi(GlobalCityName)
        
  
@@ -43,6 +47,12 @@ const navigate = useNavigate()
         
         
     }
+    catch(error){
+      console.log(error)
+      setGlobalCityName('London')
+
+      
+    }}
     HandleGeoCodingAPI()
 
 },[GlobalCityName])
@@ -91,7 +101,8 @@ useEffect(() => {
       } catch (error) {
         // Handle other errors, e.g., network issues
         console.log('Error fetching air quality data: ');
-        // Optionally, you can handle this error here or rethrow it for higher-level error handling
+     
+        // This will set the city name to automaticly London of the user doesnt put any values
       }
     };
   
@@ -103,6 +114,7 @@ useEffect(() => {
     
 
     const handleHealthAdviceData = async()=>{
+      try{
 
       const response = await CurrentWeather(GlobalCityName, units)
     
@@ -180,12 +192,15 @@ setColorFluState('orange')
       
 
       
-
+}catch (error){
+ console.log('error')
+}
       
       
     }
     handleHealthAdviceData()
   },[GlobalCityName,units])
+  
 if (!isLoggedIn){
  return  navigate('/Login')
 }

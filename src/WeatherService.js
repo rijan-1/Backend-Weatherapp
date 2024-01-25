@@ -3,7 +3,8 @@ import { useContext } from 'react'
 const APIKEY = '1843b3aeb0cb1f1701aadcce7c86d38e' 
 
 export const CurrentWeather = async (city, units)=>{ 
-
+    try{
+  
     const makeIconUrl = (iconId)=>  `https://openweathermap.org/img/wn/${iconId}@2x.png` 
 
     const URL =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=${units}` 
@@ -21,7 +22,9 @@ export const CurrentWeather = async (city, units)=>{
   
 
     return {name,description, iconId:makeIconUrl(icon)  , humidity, feels_like, temp, temp_max, temp_min, country, speed} 
-
+}catch(error){
+    console.error('error')
+}
 } 
 
 export const ExtractIcon = async (icon)=>{ 
@@ -76,6 +79,10 @@ return [extractedArray, name,country]
 
 
 export const GeoCodingApi = async (city)=>{
+
+    if (city===''){
+        const city ='London'
+    }
 
     const GeoCodinnUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${APIKEY}`
     const Data = await axios.get(GeoCodinnUrl).then(res=> res.data)
