@@ -6,19 +6,22 @@ import './Login'
 export const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [bio, setBio] = useState('');
+  const { isLoggedIn, setIsLoggedIn } = useContext(MyContext);
 // Track login status
-  const [bio, setBio] = useState(''); // User's bio
-const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
-  useEffect(() => {
-    // Initialize login state and user information from local storage
-    const initialIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const initialUsername = localStorage.getItem('username') || '';
-    const initialBio = localStorage.getItem('bio') || '';
 
-    setIsLoggedIn(initialIsLoggedIn);
-    setUsername(initialUsername);
-    setBio(initialBio);
-  }, []);
+
+useEffect(() => {
+  // Initialize login state and user information from local storage
+  const initialIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const initialUsername = localStorage.getItem('username') || '';
+  const initialBio = localStorage.getItem('bio') || '';
+
+  setIsLoggedIn(initialIsLoggedIn);
+  setUsername(initialUsername);
+  setBio(initialBio);
+}, []);
 
   const handleLogin = async () => {
     try {
@@ -49,7 +52,30 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
       console.error('Login failed:', error);
     }
   };
+  const handleChangePassword = async () => {
+    try {
+      // Send new password data to the FastAPI backend
+      const response = await fetch('http://localhost:8000/change-password/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, newPassword }),
+      });
 
+      if (response.ok) {
+        console.log('Password change successful');
+
+        // Update the local storage and state with the new password
+        localStorage.setItem('password', newPassword);
+        setPassword(newPassword);
+      } else {
+        console.error('Password change failed:', response.status);
+      }
+    } catch (error) {
+      console.error('Password change failed:', error);
+    }
+  };
   const handleLogout = () => {
     // Clear login state and user information from local storage
     localStorage.removeItem('isLoggedIn');
@@ -71,6 +97,15 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
             <button onClick={handleLogout}>Logout</button>
             <h2>Bio:</h2>
             <p>{bio}</p>
+            <h2>Change Password:</h2>
+            <input
+              type="password"
+              placeholder="New Password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              required
+            />
+            <button style={{position:'relative', left: '20%'}} onClick={handleChangePassword}>Change Password</button>
           </div>
         ) : (
           <div>
@@ -90,7 +125,9 @@ const {isLoggedIn, setIsLoggedIn} = useContext(MyContext)
               onChange={(e) => setPassword(e.target.value)}
             required/>
             <button style={{position:'relative', top:'87px'}} className='RegisterButton' onClick={handleLogin}>Login</button>
-          </div></div></div>
+          </div>
+          </div>
+          </div>
         )}
       </div>
     </div>

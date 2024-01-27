@@ -16,6 +16,7 @@ import { Flu } from './HealthAdvicePages/Flu';
 import { Hypothermia } from './HealthAdvicePages/Hypothermia';
 import { FrostBite } from './HealthAdvicePages/Frostbite';
 import { HeatCramps } from './HealthAdvicePages/HeatCramp';
+
 export const MyContext = createContext()
 
 
@@ -30,7 +31,8 @@ const App = () => {
   const [HealthTemp, setHealthTemp] = useState(0 )
   const [HealthAirQuality, setHealthAirQuality] = useState({})
   return (
-    <MyContext.Provider value={{GlobalCityName, setGlobalCityName, units, setUnits, isLoggedIn, setIsLoggedIn,HealthTemp, setHealthTemp,HealthAirQuality, setHealthAirQuality}}>
+    <MyContext.Provider value={{GlobalCityName, setGlobalCityName, units, setUnits,
+     isLoggedIn, setIsLoggedIn,HealthTemp, setHealthTemp,HealthAirQuality, setHealthAirQuality}}>
     <BrowserRouter >
     <NavBar/>
     <Routes>
