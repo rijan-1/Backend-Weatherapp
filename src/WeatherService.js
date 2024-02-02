@@ -1,6 +1,9 @@
 import axios from 'axios' 
-import { useContext } from 'react'
+
 const APIKEY = '1843b3aeb0cb1f1701aadcce7c86d38e' 
+
+
+
 
 export const CurrentWeather = async (city, units)=>{ 
     try{

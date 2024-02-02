@@ -1,13 +1,13 @@
 import React, { useState, useEffect , useContext} from 'react';
-import {GeoCodingApi,CurrentAirQualityAPI ,CurrentWeather} from './WeatherSevice.js'
-
+import  axios from 'axios';
+import { GeoCodingApi,CurrentWeather,CurrentAirQualityAPI } from '../WeatherService';
 import { MyContext } from '../App';
 import './Register.css'
-import './Login'
+
 export const LoginForm = () => {
 
-  const [location, setLocation] = useState(null);
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState({});
+  const [AirQuality, setAirQuality] = useState({})
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -15,31 +15,88 @@ export const LoginForm = () => {
   const { isLoggedIn, setIsLoggedIn } = useContext(MyContext);
 // Track login status
 
+const CurrentLocationAirQuality = async (lat, lon) => {
+  try {
+    const response = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=1843b3aeb0cb1f1701aadcce7c86d38e&units`).then(res=>res.data);
+    
+    const {main:{aqi} } = response
+    
+    setAirQuality({aqi})
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    throw error;
+  }
+};
 
-function handleLocationClick() {
+const successQuality = async (position) => {
+  const { latitude, longitude } = position.coords;
+
+
+    const AirQualityData = await CurrentLocationAirQuality(latitude, longitude);
+
+    console.log(AirQualityData);
+
+
+};
+
+
+
+useEffect(() => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successQuality, error);
+
+    
+
+  }
+}, []); 
+
+
+
+
+
+const CurrentLocationCurrentWeather = async (lat, lon) => {
+
+  try {
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=1843b3aeb0cb1f1701aadcce7c86d38e&units=metric`);
+
+    return response.data;
+
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    throw error;
+  }
+};
+
+const success = async (position) => {
+
+  const { latitude, longitude } = position.coords;
+
+  try {
+    const weatherData = await CurrentLocationCurrentWeather(latitude, longitude);
+    const {main:{temp, temp_max, feels_like, pressure}, name, } = weatherData
+    setWeather({temp, name,temp_max, feels_like, pressure});
+
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const error = (err) => {
+  console.error(`Error getting location: ${err.message}`);
+};
+
+useEffect(() => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    console.log("Geolocation not supported");
+
+    
+
   }
-}
+}, []); 
 
 
 
-function success(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
-  setLocation({ latitude, longitude });
-  console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=<YOUR_API_KEY>&units=metric`)
-  .then(response => response.json())
-  .then(data => {
-    setWeather(data);
-    console.log(data);
-  })
-  .catch(error => console.log(error));
-}
 useEffect(() => {
   // Initialize login state and user information from local storage
   const initialIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -121,7 +178,7 @@ useEffect(() => {
       <div className='RegisterFormcss'>
 
 
-        {isLoggedIn ? (<div>
+        {isLoggedIn== false ? (<div>
           <div>
             <h1>Welcome, {username}!</h1>
             <button onClick={handleLogout}>Logout</button>
@@ -131,6 +188,7 @@ useEffect(() => {
             <input
               type="password"
               placeholder="New Password"
+
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               required
@@ -138,6 +196,34 @@ useEffect(() => {
             <button style={{position:'relative', left: '20%'}} onClick={handleChangePassword}>Change Password</button>
           </div>
           <div>
+            <div className='ProfileCurrentWeatherDashboard'>
+              <div className='ProfileCurrentWeatherContents'>
+             <h1 style={{fontSize:'45px'}}>{Math.round(AirQuality.aqi) }C</h1>
+              <h2>{weather.name}</h2>
+              
+
+                </div>
+                <div className='ProfileCurrentWeatherContents'>
+             <h1 style={{fontSize:'45px'}}>{Math.round(weather.temp) }C</h1>
+              <h2>{weather.name}</h2>
+              <div className='ProfileCurrentWeatherDescriptions'>
+                <h2>{weather.temp_min}</h2>
+                <h2>{weather.temp_max}</h2>
+                <h2>{weather.pressure}</h2>
+            
+                </div>
+
+
+                </div>
+
+              </div>
+
+             
+              <div>
+                <h2>Current AQI </h2>
+                </div>
+
+            
 
 
 

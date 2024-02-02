@@ -4,6 +4,29 @@
     height: 100vh;
 }
 
+
+.ProfileCurrentWeatherDashboard{
+    width: 50%;
+    height: 650px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    position: absolute;
+    right: -60%;
+    top: 0px;
+    align-items: end;
+    border-radius: 20px;
+}
+
+
+.ProfileCurrentWeatherContents{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 15%;
+}
+
+
 .RegisterFormcss{
     position: absolute;
     left: 30%;
@@ -17,8 +40,6 @@
     height: 50%;
 
    
-    
-    
 }
 
 
