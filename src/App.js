@@ -20,8 +20,6 @@ import { HeatCramps } from './HealthAdvicePages/HeatCramp';
 export const MyContext = createContext()
 
 
-
-
 const App = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)

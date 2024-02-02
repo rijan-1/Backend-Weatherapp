@@ -1,9 +1,13 @@
 import React, { useState, useEffect , useContext} from 'react';
+import {GeoCodingApi,CurrentAirQualityAPI ,CurrentWeather} from './WeatherSevice.js'
 
 import { MyContext } from '../App';
 import './Register.css'
 import './Login'
 export const LoginForm = () => {
+
+  const [location, setLocation] = useState(null);
+  const [weather, setWeather] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -12,6 +16,30 @@ export const LoginForm = () => {
 // Track login status
 
 
+function handleLocationClick() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    console.log("Geolocation not supported");
+  }
+}
+
+
+
+function success(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  setLocation({ latitude, longitude });
+  console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=<YOUR_API_KEY>&units=metric`)
+  .then(response => response.json())
+  .then(data => {
+    setWeather(data);
+    console.log(data);
+  })
+  .catch(error => console.log(error));
+}
 useEffect(() => {
   // Initialize login state and user information from local storage
   const initialIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -91,7 +119,9 @@ useEffect(() => {
   return (
     <div className='RegisterBakcground'>
       <div className='RegisterFormcss'>
-        {isLoggedIn ? (
+
+
+        {isLoggedIn ? (<div>
           <div>
             <h1>Welcome, {username}!</h1>
             <button onClick={handleLogout}>Logout</button>
@@ -106,6 +136,13 @@ useEffect(() => {
               required
             />
             <button style={{position:'relative', left: '20%'}} onClick={handleChangePassword}>Change Password</button>
+          </div>
+          <div>
+
+
+
+
+          </div>
           </div>
         ) : (
           <div>
