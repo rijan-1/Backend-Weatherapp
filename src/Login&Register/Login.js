@@ -97,16 +97,7 @@ useEffect(() => {
 
 
 
-useEffect(() => {
-  // Initialize login state and user information from local storage
-  const initialIsLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  const initialUsername = localStorage.getItem('username') || '';
-  const initialBio = localStorage.getItem('bio') || '';
 
-  setIsLoggedIn(initialIsLoggedIn);
-  setUsername(initialUsername);
-  setBio(initialBio);
-}, []);
 
   const handleLogin = async () => {
     try {
@@ -124,9 +115,7 @@ useEffect(() => {
         console.log('Login successful:', user);
 
         // Store login state and user information in local storage
-        localStorage.setItem('isLoggedIn', true);
-        localStorage.setItem('username', user.username);
-        localStorage.setItem('bio', user.bio);
+    
 
         setIsLoggedIn(true); // Set login status to true
         setBio(user.bio); // Set the user's bio
@@ -163,9 +152,7 @@ useEffect(() => {
   };
   const handleLogout = () => {
     // Clear login state and user information from local storage
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('username');
-    localStorage.removeItem('bio');
+   
 
     setIsLoggedIn(false); // Set login status to false
     setUsername('');
@@ -178,7 +165,7 @@ useEffect(() => {
       <div className='RegisterFormcss'>
 
 
-        {isLoggedIn== false ? (<div>
+        {isLoggedIn== true ? (<div>
           <div>
             <h1>Welcome, {username}!</h1>
             <button onClick={handleLogout}>Logout</button>
