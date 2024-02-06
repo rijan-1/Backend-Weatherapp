@@ -1,0 +1,35 @@
+.PersonalWeatherDashBoardbackground{
+    background-color: black;
+    width: 100%;
+    height: 1200px
+}
+
+.DashBoardWeatherTemp{
+    width: 25%;
+    background-color: rgb(82, 82, 82);
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    position: absolute;
+    left: 0%;
+    bottom: 16%;
+    flex-direction: column;
+ 
+}
+
+.PersonalDashBoardDescriptions{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    gap: 150px;
+   
+
+
+}
+
+.PersonalDashBoardDescriptions h2{
+    background-color: rgb(94, 94, 94);
+    width: 300%;
+    height: 300% ;
+  position: relative;
+    top: 55%
+}

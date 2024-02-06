@@ -3,8 +3,10 @@ import  axios from 'axios';
 import { GeoCodingApi,CurrentWeather,CurrentAirQualityAPI } from '../WeatherService';
 import { MyContext } from '../App';
 import './Register.css'
+import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
+  const navigate = useNavigate()
 
   const [weather, setWeather] = useState({});
   const [AirQuality, setAirQuality] = useState({})
@@ -146,6 +148,10 @@ useEffect(() => {
     setPassword('');
     setBio(''); // Clear the user's bio on logout
   };
+
+  useEffect(()=>{if (isLoggedIn=== false){
+    navigate('/PersonalDashBoard')
+  }},[isLoggedIn, navigate])
 
   return (
     <div className='RegisterBakcground'>
