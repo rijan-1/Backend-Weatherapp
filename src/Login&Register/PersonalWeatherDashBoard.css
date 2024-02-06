@@ -11,15 +11,32 @@
     justify-content: center;
     height: 300px;
     position: absolute;
-    left: 0%;
+    left: 5%;
   
     flex-direction: column;
  
 }
+.AQIDashboard{
+    background-color: rgb(99, 100, 102);
+    position: absolute;
+    width: 30%;
+    right: 3%;
+    top: 10%;
+    display: flex;
+    justify-content: center;
 
+}
 .DashBoardWeatherName{
     position: absolute;
     background-color: rgb(102, 102, 102);
+    z-index: 999;
+    left: 5%;
+    top: 59%;
+    width: 25%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .PersonalDashBoardDescriptions{
@@ -29,8 +46,8 @@
     row-gap: -0px;
     column-gap: 120px;
     position: relative;
-    left: -200px;
-    top:-80px;
+    left: -4%;
+    top:-20px;
     margin: 0px;
 
    

@@ -11,7 +11,7 @@ const PersonalWeatherDashBoard = () => {
 
   const CurrentLocationAirQuality = async (lat, lon) => {
     try {
-      console.log({lat,lon})
+
       const response = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=1843b3aeb0cb1f1701aadcce7c86d38e&units`).then(res=>res.data);
       
       const {
@@ -25,12 +25,14 @@ const PersonalWeatherDashBoard = () => {
         ]
       } = response
       
-      setAirQuality({aqi})
+      
+      setAirQuality({aqi,co,no,no2, o3,so2,pm2_5,pm10,nh3})
     } catch (error) {
       console.error('Error fetching weather data:', error);
       throw error;
     }
   };
+
 const successQuality = async (position) => {
   const { latitude, longitude } = position.coords;
 
@@ -42,7 +44,15 @@ const successQuality = async (position) => {
 
 };
 
-  
+
+useEffect(() => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successQuality, error);
+
+    
+
+  }
+}, []); 
   
   
   
@@ -92,14 +102,7 @@ const successQuality = async (position) => {
   return (
     <div className='PersonalWeatherDashBoardbackground'>
       
-              <div className='ProfileCurrentWeatherContents' style={{color:'white'}}>
-              
-          
-              
-              
-              
-
-                </div>
+            
                 <div className='ProfileCurrentWeatherContents'  style={{color: 'white'}}>
                   <div className='DashBoardWeatherTemp'>
                     <h2 style={{position:'relative', left: '25%', top: '5%'}}>Temperature</h2>
@@ -118,22 +121,38 @@ const successQuality = async (position) => {
                 <h2>{weather.feels_like}C</h2>
              </div>
              <div className='DashboardDisplayBoxes'>
-             <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+             <h3 className='DashboardDescriptionDescription'>Max Temp</h3>
                   <h2>{weather.temp_max}C</h2>
                 </div>
                
                 <div className='DashboardDisplayBoxes'>
-                <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+                <h3 className='DashboardDescriptionDescription'>Humidity</h3>
                 <h2>{weather.humidity} (RH)</h2>
                 </div>
                 <div className='DashboardDisplayBoxes'>
-                <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+                <h3 className='DashboardDescriptionDescription'>Pressure</h3>
               <h2>{weather.pressure}(atm)</h2>
              </div>
                 </div>
+                <div>
+                <div  className='AQIDashboard'>
+                  <h1 style={{fontSize:'65px'}}>{AirQuality.aqi}AQI</h1>
+                 
+                </div>co,no,no2, o3,so2,pm2_5,pm10,nh3
+                <div className='AQIDASHBOARDDESCRIPTION'>
+                  <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
+                    <h1>{AirQuality.co}</h1>
+
+                  </div>
+                  <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
+                    <h1>{AirQuality.no}</h1>
+
+                  </div>
+
+                </div>
 
 
-              
+              </div>
 
               </div>
     
