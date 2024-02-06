@@ -4,7 +4,11 @@
     height: 100vh;
 }
 
+.ProfileCurrentWeatherDescriptions{
 
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+}
 .ProfileCurrentWeatherDashboard{
     width: 50%;
     height: 650px;

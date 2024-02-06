@@ -100,7 +100,7 @@ useEffect(()=>{
     airqualityValue()
 },[currentAirQualityState.aqi])
 const navigate = useNavigate();
-if (!isLoggedIn) {
+if (isLoggedIn) {
     // If the user is not logged in, redirect to the login page
     return navigate("/Login") ;
   }

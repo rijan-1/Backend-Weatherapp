@@ -201,7 +201,7 @@ setColorFluState('orange')
     handleHealthAdviceData()
   },[GlobalCityName,units])
   
-if (!isLoggedIn){
+if (isLoggedIn){
  return  navigate('/Login')
 }
 

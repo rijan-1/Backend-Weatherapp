@@ -17,9 +17,19 @@ export const LoginForm = () => {
 
 const CurrentLocationAirQuality = async (lat, lon) => {
   try {
+    console.log({lat,lon})
     const response = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=1843b3aeb0cb1f1701aadcce7c86d38e&units`).then(res=>res.data);
     
-    const {main:{aqi} } = response
+    const {
+      
+      list:[
+
+      {
+        main:{aqi},
+        components:{co,no,no2, o3,so2,pm2_5,pm10,nh3}
+}
+      ]
+    } = response
     
     setAirQuality({aqi})
   } catch (error) {
@@ -126,30 +136,7 @@ useEffect(() => {
       console.error('Login failed:', error);
     }
   };
-  const handleChangePassword = async () => {
-    try {
-      // Send new password data to the FastAPI backend
-      const response = await fetch('http://localhost:8000/change-password/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, newPassword }),
-      });
-
-      if (response.ok) {
-        console.log('Password change successful');
-
-        // Update the local storage and state with the new password
-        localStorage.setItem('password', newPassword);
-        setPassword(newPassword);
-      } else {
-        console.error('Password change failed:', response.status);
-      }
-    } catch (error) {
-      console.error('Password change failed:', error);
-    }
-  };
+  
   const handleLogout = () => {
     // Clear login state and user information from local storage
    
@@ -165,7 +152,7 @@ useEffect(() => {
       <div className='RegisterFormcss'>
 
 
-        {isLoggedIn== true ? (<div>
+        {isLoggedIn== false ? (<div>
           <div>
             <h1>Welcome, {username}!</h1>
             <button onClick={handleLogout}>Logout</button>
@@ -180,7 +167,7 @@ useEffect(() => {
               onChange={(e) => setNewPassword(e.target.value)}
               required
             />
-            <button style={{position:'relative', left: '20%'}} onClick={handleChangePassword}>Change Password</button>
+        
           </div>
           <div>
             <div className='ProfileCurrentWeatherDashboard'>
@@ -192,7 +179,7 @@ useEffect(() => {
                 </div>
                 <div className='ProfileCurrentWeatherContents'>
              <h1 style={{fontSize:'45px'}}>{Math.round(weather.temp) }C</h1>
-              <h2>{weather.name}</h2>
+            
               <div className='ProfileCurrentWeatherDescriptions'>
                 <h2>{weather.temp_min}</h2>
                 <h2>{weather.temp_max}</h2>

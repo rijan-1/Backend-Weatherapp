@@ -16,7 +16,7 @@ import { Flu } from './HealthAdvicePages/Flu';
 import { Hypothermia } from './HealthAdvicePages/Hypothermia';
 import { FrostBite } from './HealthAdvicePages/Frostbite';
 import { HeatCramps } from './HealthAdvicePages/HeatCramp';
-
+import PersonalWeatherDashBoard from './Login&Register/PersonalWeatherDashBoard';
 export const MyContext = createContext()
 
 
@@ -43,6 +43,7 @@ const App = () => {
       <Route path='/pages/HealthAdvice' element={<HealthAdvice/>}/>
       <Route path='/Register' element={<RegistrationForm/>}/>
       <Route path='/Login' element={<LoginForm/>}/>
+      <Route path='/PersonalDashBoard' element={<LoginForm/>}/>
       <Route path='/Pollen' element={<Pollen/>}/>
       <Route path='/ColdHives' element={<ColdHives/>}/>
       <Route path='/Asthma' element={<Asthma/>}/>
