@@ -138,14 +138,30 @@ useEffect(() => {
                 <div  className='AQIDashboard'>
                   <h1 style={{fontSize:'65px'}}>{AirQuality.aqi}AQI</h1>
                  
-                </div>co,no,no2, o3,so2,pm2_5,pm10,nh3
+                </div>
                 <div className='AQIDASHBOARDDESCRIPTION'>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.co}</h1>
+                    <h1>{AirQuality.co}co</h1>
 
                   </div>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.no}</h1>
+                    <h1>{AirQuality.no}no</h1>
+
+                  </div>
+                  <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
+                    <h1>{AirQuality.no2}no2</h1>
+
+                  </div>
+                  <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
+                    <h1>{AirQuality.o3}o3</h1>
+
+                  </div>
+                  <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
+                    <h1>{AirQuality.so2}so2</h1>
+
+                  </div>
+                  <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
+                    <h1>{AirQuality.pm10}pm10</h1>
 
                   </div>
 

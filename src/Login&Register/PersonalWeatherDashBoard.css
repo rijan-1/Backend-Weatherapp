@@ -14,16 +14,42 @@
     left: 5%;
   
     flex-direction: column;
+    border-radius: 25px;
  
+}
+
+.AQIDASHBOARDDESCRIPTION{
+    display: grid;
+    grid-template-columns: repeat(3,2fr); 
+     
+    position: absolute;
+    right: 3%;
+    row-gap: 70px;
+    column-gap: 50px;
+    top:45%
+
+}
+
+.AQIDASHBOARDDESCRIPTIONBoxes{
+    background-color: rgb(121, 119, 119);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30%;
+    border-radius: 20px;
+    
+
 }
 .AQIDashboard{
     background-color: rgb(99, 100, 102);
     position: absolute;
-    width: 30%;
-    right: 3%;
+    width: 33%;
+    right: 1.5%;
     top: 10%;
     display: flex;
     justify-content: center;
+    border-radius: 25px;
 
 }
 .DashBoardWeatherName{
@@ -37,6 +63,7 @@
     display: flex;
     justify-content: center;
     font-size: 30px;
+    border-radius: 25px;
 }
 
 .PersonalDashBoardDescriptions{
@@ -49,6 +76,7 @@
     left: -4%;
     top:-20px;
     margin: 0px;
+  
 
    
 
@@ -58,7 +86,8 @@
     z-index: 999;
     position: relative;
     top: 30%;
-    left: 40%;
+    left: 40%; 
+     border-radius: 25px;
 }
 
 .PersonalDashBoardDescriptions h2{
@@ -72,4 +101,7 @@
   font-size: 40px;
   padding-top: 70%;
   margin-top: 0px;
+}
+.DashboardDisplayBoxes{
+    border-radius: 30px;
 }
