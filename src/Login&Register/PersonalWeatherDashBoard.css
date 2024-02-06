@@ -12,24 +12,47 @@
     height: 300px;
     position: absolute;
     left: 0%;
-    bottom: 16%;
+  
     flex-direction: column;
  
+}
+
+.DashBoardWeatherName{
+    position: absolute;
+    background-color: rgb(102, 102, 102);
 }
 
 .PersonalDashBoardDescriptions{
     display: grid;
     grid-template-columns: repeat(2,2fr);
-    gap: 150px;
+
+    row-gap: -0px;
+    column-gap: 120px;
+    position: relative;
+    left: -200px;
+    top:-80px;
+    margin: 0px;
+
    
 
 
 }
+.DashboardDescriptionDescription{
+    z-index: 999;
+    position: relative;
+    top: 30%;
+    left: 40%;
+}
 
 .PersonalDashBoardDescriptions h2{
     background-color: rgb(94, 94, 94);
-    width: 300%;
-    height: 300% ;
+    width: 140%;
+    height: 35% ;
+  display: flex;
+  justify-content: center;
   position: relative;
-    top: 55%
+
+  font-size: 40px;
+  padding-top: 70%;
+  margin-top: 0px;
 }

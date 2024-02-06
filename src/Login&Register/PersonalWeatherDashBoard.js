@@ -93,8 +93,10 @@ const successQuality = async (position) => {
     <div className='PersonalWeatherDashBoardbackground'>
       
               <div className='ProfileCurrentWeatherContents' style={{color:'white'}}>
-             <h1 style={{fontSize:'45px'}}>{Math.round(AirQuality.aqi) }helloC</h1>
-              <h2>{weather.name}</h2>
+              
+          
+              
+              
               
 
                 </div>
@@ -103,17 +105,31 @@ const successQuality = async (position) => {
                     <h2 style={{position:'relative', left: '25%', top: '5%'}}>Temperature</h2>
                 
                     <h1 style={{fontSize:'110px',position:'relative', left: '15%'}}>{Math.round(weather.temp) } C</h1>
-               
+             
+             </div>
+             <div className='DashBoardWeatherName'>
+             <h1>{weather.name}</h1>
              </div>
             
               <div className='PersonalDashBoardDescriptions' style={{color: 'white'}}>
-                <h2>{weather.feels_like}</h2>
-             
-                <h2>{weather.pressure}</h2>
-                <h2>{weather.humidity}</h2>
+                <div className='DashboardDisplayBoxes'>
                 
-                <h2>{weather.temp_max}</h2>
-             
+                  <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+                <h2>{weather.feels_like}C</h2>
+             </div>
+             <div className='DashboardDisplayBoxes'>
+             <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+                  <h2>{weather.temp_max}C</h2>
+                </div>
+               
+                <div className='DashboardDisplayBoxes'>
+                <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+                <h2>{weather.humidity} (RH)</h2>
+                </div>
+                <div className='DashboardDisplayBoxes'>
+                <h3 className='DashboardDescriptionDescription'>Feels like</h3>
+              <h2>{weather.pressure}(atm)</h2>
+             </div>
                 </div>
 
 
