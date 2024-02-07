@@ -1,0 +1,28 @@
+.MobileNavDropdoiwnButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Target buttons inside <a> elements */
+.MobileNavDropdoiwnButtons a button {
+    height: 40px;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    font-weight: 300;
+    font-size: large;
+    width: 100%;
+    position: relative;
+    align-items: center;
+   
+
+}
+
+.buttonforDropDown {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: rgb(24, 24, 24);
+}

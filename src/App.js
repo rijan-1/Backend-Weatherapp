@@ -17,10 +17,14 @@ import { Hypothermia } from './HealthAdvicePages/Hypothermia';
 import { FrostBite } from './HealthAdvicePages/Frostbite';
 import { HeatCramps } from './HealthAdvicePages/HeatCramp';
 import PersonalWeatherDashBoard from './Login&Register/PersonalWeatherDashBoard';
+import { useMediaQuery } from '@react-hook/media-query';
+import  MobileNavBar  from './components/MobileNavBar';
 export const MyContext = createContext()
 
 
+
 const App = () => {
+  const isMobile = useMediaQuery('(max-width: 1270px)');
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
@@ -32,7 +36,7 @@ const App = () => {
     <MyContext.Provider value={{GlobalCityName, setGlobalCityName, units, setUnits,
      isLoggedIn, setIsLoggedIn,HealthTemp, setHealthTemp,HealthAirQuality, setHealthAirQuality}}>
     <BrowserRouter >
-    <NavBar/>
+    {isMobile ? <MobileNavBar /> : <NavBar />}
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/pages/DailyWeather/DailyWeather' element={<DailyWeatherFunction/>}/>
