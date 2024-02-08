@@ -123,7 +123,7 @@ if (isLoggedIn) {
                 
 
                     
-                    <h4 style={{width:'85%'}}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa</h4>
+                    <h4 style={{width:'85%'}}>“Lorem ipsum dolor sit aue.orttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa</h4>
 
                 </div>
                 <hr style={{ height: '2px', borderWidth: 0, fill: 'white', backgroundColor: 'white', width: "50%", position: 'absolute',
@@ -131,7 +131,7 @@ if (isLoggedIn) {
 
                 <div className='airqualityinformation'>
                     <div className='AirQualityComponent'>
-                        <h2>All Pollutants</h2>
+                        <h2 className='airqualitydescriptionstitle'>All Pollutants</h2>
                         <div className='airqualitycomponents'>
                             <div className='airqualitycomponentname'>
                                 <h3 style={{position:'absolute',top:'45px',left:'40px',height:'60px',width:'60px'}}>{Math.round(currentAirQualityState.co)}co</h3>
@@ -150,10 +150,9 @@ if (isLoggedIn) {
                             </div>
                             
                      
-                        </div>
-                        <div className='airqualitycomponents2'>
+                      
                             <div className='airqualitycomponentname'>
-                                <h3 style={{position:'absolute',top:'50px',left:'40px',height:'60px',width:'60px'}}>{Math.round(currentAirQualityState.no2)}no2</h3>
+                                <h3 style={{position:'absolute',left:'40px',height:'60px',width:'60px'}}>{Math.round(currentAirQualityState.no2)}no2</h3>
                             <img style={{position:'relative',top:'30px',left:'20px',height:'120px',width:'120px'}} src={Ellipse} alt='ellipse'/>
 
                             </div>
