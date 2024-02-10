@@ -28,7 +28,7 @@ export const SearchBar = () => {
    
      
         <div className='section section_input'>
-          <input style={{position:'relative', top: '0px', width:'24%', height:'40px',zIndex:'1000'}} onKeyDown={EnteredCity} className='searchbar' type ='text' name='city'placeholder='enter city name'  />
+          <input  onKeyDown={EnteredCity} className='searchbar' type ='text' name='city'placeholder='enter city name'  />
           <button style={{zIndex:'1000'}} onClick={changeUnits} className='btn'>C</button>
         </div>
     <div className ='menuContainer'>  </div>

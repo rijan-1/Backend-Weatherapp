@@ -32,6 +32,8 @@
 
 } 
 
+
+
 .DailyWeatherDescription{ 
 
     color: white; 
@@ -117,7 +119,52 @@
      
 
 } 
+@media (max-width: 1200px) {
+    .dailyWeatherSection{
 
+        width: 90%;
+        padding-right: 50px;
+        padding-left: 50px;
+
+}
+
+@media (max-width: 900px){
+  
+    .dailyweatherDescription{
+        position: relative;
+        left: -10%
+    }
+}
+
+@media (max-width: 850px){
+   
+    .DailyPrecipitation{
+        position: absolute;
+        left: 1300px;
+    }
+}
+@media (max-width: 1900px){
+   
+    .dailyweatherDescription{
+        position: absolute;
+        left: -20%;
+        
+    }
+}
+
+@media (max-width:600px){
+    .DailyWeatherHeading{
+
+        position: relative;
+        bottom: 100px;
+ 
+
+    }
+    .dailyWeatherSection{
+        padding-top: 100px;
+    }
+}
+}
 .dailyWeatherContainer{ 
 
     position: relative; 

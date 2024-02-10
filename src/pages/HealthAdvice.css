@@ -6,6 +6,8 @@
     width:100%;
     z-index: -10;
 }
+
+
 .moredetailcss{
     background-color: transparent;
     position: relative;
@@ -41,15 +43,18 @@
 }
 
 @media (max-width: 1600px){
+   
+    .HealthAdviceBakcground{
+        height: 1380px
+    }
     .HealthAdviceSection{
        
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap:90px;
-    
-    
-        
+
     }
+  
 
 }
 @media (max-width: 1100px){
@@ -58,9 +63,43 @@
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap:90px;
+  
+    }
+    .HealthAdviceSection{
+        position: relative;
+        top: -200px
+       
+    }
+    .allergytitle{
+        position: relative;
+        top: -200px;
+        left: 80px
+    }
+
+}
+
+@media (max-width: 800px){
+    .HealthAdviceSection{
+       
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:90px;
     
     
         
+    }
+    .HealthAdviceBakcground{
+        height: 2430px
+    }
+    .HealthAdviceSection{
+        position: relative;
+        top: -300px
+       
+    }
+    .allergytitle{
+        position: relative;
+        top: -300px;
+        left: 80px
     }
 
 }

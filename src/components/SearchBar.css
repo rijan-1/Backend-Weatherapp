@@ -1,19 +1,31 @@
 .SearchBarContainer{
-    position: absolute;
+    position: fixed;
     
    
     width: 100%;
+    z-index: 999;
     
 
     
 
 }
- 
+
 
 .section_input{
     display: flex;
     justify-content: center;
     gap: 40px
+}
+.searchbar{
+    height: 40px;
+    width: 300px
+}
+@media (max-width:900px){
+    .searchbar{
+        width: 300px
+    }
+
+
 }
 
 .menuContainer{

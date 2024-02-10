@@ -128,7 +128,7 @@ useEffect(()=>{
 
                     </div> 
 
-                    <div> 
+                    <div className='DailyPrecipitation'> 
 
                       <p><LuWind  style={{height:'25px',width:'25px'}}/></p> 
 

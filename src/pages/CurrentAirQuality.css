@@ -57,6 +57,10 @@
         column-gap: 50%;
 
     }
+    .AirQualityBackGround{
+        height: 1900px
+
+    }
   
 
 
@@ -111,6 +115,10 @@
         column-gap: 65%;
         left: 50%;
         top: -40px
+    }
+    .AirQualityBackGround{
+        height: 1900px
+
     }
 
     .AirqualityMainContent{
