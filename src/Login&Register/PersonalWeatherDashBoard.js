@@ -104,6 +104,7 @@ useEffect(() => {
       
             
                 <div className='ProfileCurrentWeatherContents'  style={{color: 'white'}}>
+                  <div className='ProfileCurrentWeatherContentsBox'>
                   <div className='DashBoardWeatherTemp'>
                     <h2 style={{position:'relative', left: '25%', top: '5%'}}>Temperature</h2>
                 
@@ -113,7 +114,8 @@ useEffect(() => {
              <div className='DashBoardWeatherName'>
              <h1>{weather.name}</h1>
              </div>
-            
+            </div>
+            <div className='ProfileCurrentWeatherContentsBox'>
               <div className='PersonalDashBoardDescriptions' style={{color: 'white'}}>
                 <div className='DashboardDisplayBoxes'>
                 
@@ -133,8 +135,9 @@ useEffect(() => {
                 <h3 className='DashboardDescriptionDescription'>Pressure</h3>
               <h2>{weather.pressure}(atm)</h2>
              </div>
+             </div>
                 </div>
-                <div>
+                <div   className='ProfileCurrentWeatherContentsBox'>
                 <div  className='AQIDashboard'>
                   <h1 style={{fontSize:'65px'}}>{AirQuality.aqi}AQI</h1>
                  

@@ -2,6 +2,7 @@
     background-image: url('https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     height: 100vh;
+    position: relative;
 }
 
 .ProfileCurrentWeatherDescriptions{
@@ -33,15 +34,18 @@
 
 .RegisterFormcss{
     position: absolute;
-    left: 30%;
-    top: 28%;
+
+    top: 20%;
     display:flex;
     flex-direction: column;
     gap: 30px;
-    width:40%;
+    width:100%;
     background-color: transparent;
     border-radius: 30px;
     height: 50%;
+  
+    justify-content: center;
+    align-items: center;
 
    
 }
@@ -50,7 +54,7 @@
 .RegisterButton{
     width: 30%;
     position: relative;
-    left: 30%;
+  
     border-radius: 15px;
     border-width: 0px;
     height: 35px;
@@ -64,12 +68,37 @@
 }
 .RegisterFormcss input{
     position: relative;
-    left: 15%;
+
     height: 35px;
-    width: 75%;
+    display: flex;
+    justify-content: center;
+    width:40%;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.5);
     border-width: 0px;
    
     
+}
+
+
+@media (max-width: 1300px){
+    .RegisterFormcss{
+        position: relative;
+
+        top: 1%
+    }
+   
+   
+
+
+}
+@media (max-width: 1000px){
+    .RegisterFormcss input{
+position: relative;
+width: 60%
+
+    }
+   
+
+
 }
