@@ -32,9 +32,11 @@ const App = () => {
   const [units, setUnits] = useState('metric')
   const [HealthTemp, setHealthTemp] = useState(0 )
   const [HealthAirQuality, setHealthAirQuality] = useState({})
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   return (
     <MyContext.Provider value={{GlobalCityName, setGlobalCityName, units, setUnits,
-     isLoggedIn, setIsLoggedIn,HealthTemp, setHealthTemp,HealthAirQuality, setHealthAirQuality}}>
+     isLoggedIn, setIsLoggedIn,HealthTemp, setHealthTemp,HealthAirQuality, setHealthAirQuality,password, setPassword,username, setUsername}}>
     <BrowserRouter >
     {isMobile ? <MobileNavBar /> : <NavBar />}
     <Routes>

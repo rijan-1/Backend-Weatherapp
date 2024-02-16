@@ -2,13 +2,27 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './PersonalWeatherDashBoard.css'
-
+import { useContext } from 'react';
+import { MyContext } from '../App';
+import { useNavigate } from 'react-router-dom';
+import { LoginForm } from './Login';
 const PersonalWeatherDashBoard = () => {
+
+  const navigate= useNavigate()
   const [weather, setWeather] = useState({});
   const [AirQuality, setAirQuality] = useState({})
+  const {isLoggedIn, setIsLoggedIn ,password, setPassword,username, setUsername} = useContext(MyContext)
 
   
+  const handleLogout = () => {
+    // Clear login state and user information from local storage
+   
 
+    setIsLoggedIn(false); // Set login status to false
+    setUsername('')
+    setPassword('')
+   // Clear the user's bio on logout
+  };
   const CurrentLocationAirQuality = async (lat, lon) => {
     try {
 
@@ -94,13 +108,18 @@ useEffect(() => {
   
       
   
-    }
-  }, []); 
+    }  }, []); 
+ return (
+  isLoggedIn === false?  (
+    <div>
+    <LoginForm/>
+    </div>
+    ):
   
-  
-  
-  return (
+ 
     <div className='PersonalWeatherDashBoardbackground'>
+
+      <button className='LogOutButton' onClick={handleLogout}>Log Out</button>
       
             
                 <div className='ProfileCurrentWeatherContents'  style={{color: 'white'}}>

@@ -3,6 +3,21 @@
     width: 100%;
     min-height: 100vh;
 }
+.LogOutButton{
+    z-index: 1;
+    width: 150px;
+    height: 40px;
+   
+}
+@media (min-width:1270px){
+    .LogOutButton{
+    z-index: 1;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    top: 20%
+}
+}
 
 .ProfileCurrentWeatherContents {
     display: grid;

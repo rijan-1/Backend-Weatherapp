@@ -10,14 +10,6 @@ export const NavBar = () => {
 
       <input type="checkbox" id="openmenu" className="hamburger-checkbox" />
 
-      <div className="hamburger-icon">
-        <label htmlFor="openmenu" id="hamburger-label">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
 
       <div className="menu-pane" >
         <div className='ButtonToPages'>

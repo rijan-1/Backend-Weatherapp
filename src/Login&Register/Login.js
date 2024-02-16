@@ -3,18 +3,19 @@ import  axios from 'axios';
 import { GeoCodingApi,CurrentWeather,CurrentAirQualityAPI } from '../WeatherService';
 import { MyContext } from '../App';
 import './Register.css'
+import './Login.css'
 import { useNavigate } from 'react-router-dom';
-
+import PersonalWeatherDashBoard from './PersonalWeatherDashBoard';
 export const LoginForm = () => {
   const navigate = useNavigate()
 
   const [weather, setWeather] = useState({});
   const [AirQuality, setAirQuality] = useState({})
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
+  
+
   const [bio, setBio] = useState('');
-  const { isLoggedIn, setIsLoggedIn } = useContext(MyContext);
+  const { isLoggedIn, setIsLoggedIn ,password, setPassword} = useContext(MyContext);
 // Track login status
 
 const CurrentLocationAirQuality = async (lat, lon) => {
@@ -139,17 +140,9 @@ useEffect(() => {
     }
   };
   
-  const handleLogout = () => {
-    // Clear login state and user information from local storage
-   
 
-    setIsLoggedIn(false); // Set login status to false
-    setUsername('');
-    setPassword('');
-    setBio(''); // Clear the user's bio on logout
-  };
 
-  useEffect(()=>{if (isLoggedIn=== false){
+  useEffect(()=>{if (isLoggedIn=== true){
     navigate('/PersonalDashBoard')
   }},[isLoggedIn, navigate])
 
@@ -158,62 +151,18 @@ useEffect(() => {
       <div className='RegisterFormcss'>
 
 
-        {isLoggedIn== false ? (<div>
+        {isLoggedIn== true ? (<div>
           <div>
-            <h1>Welcome, {username}!</h1>
-            <button onClick={handleLogout}>Logout</button>
-            <h2>Bio:</h2>
-            <p>{bio}</p>
-            <h2>Change Password:</h2>
-            <input
-              type="password"
-              placeholder="New Password"
-
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              required
-            />
+          <PersonalWeatherDashBoard/>
+            
         
           </div>
-          <div>
-            <div className='ProfileCurrentWeatherDashboard'>
-              <div className='ProfileCurrentWeatherContents'>
-             <h1 style={{fontSize:'45px'}}>{Math.round(AirQuality.aqi) }C</h1>
-              <h2>{weather.name}</h2>
-              
-
-                </div>
-                <div className='ProfileCurrentWeatherContents'>
-             <h1 style={{fontSize:'45px'}}>{Math.round(weather.temp) }C</h1>
-            
-              <div className='ProfileCurrentWeatherDescriptions'>
-                <h2>{weather.temp_min}</h2>
-                <h2>{weather.temp_max}</h2>
-                <h2>{weather.pressure}</h2>
-            
-                </div>
-
-
-                </div>
-
-              </div>
-
-             
-              <div>
-                <h2>Current AQI </h2>
-                </div>
-
-            
-
-
-
-
-          </div>
+      
           </div>
         ) : (
           <div>
             <div className='LRegisterFormcss' >
-            <div style={{height:'400px', width:'100%',backgroundColor:'rgba(0,0,0,0.4)',borderRadius:'20px', paddingTop:'15px'}}>
+            <div classname='LoginSectionBackground'>
             <h1 className='RegisterHeading'>Login</h1>
             <input  style={{position:'relative', top:'15px'}}
               type="text"
