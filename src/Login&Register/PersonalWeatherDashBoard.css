@@ -33,7 +33,12 @@
     padding: 20px; /* Add padding */
     color: white;
 }
+.Personaldashboardtitle{
 
+    font-size: larger;
+    color: white;
+    position: absolute;
+}
 .DashBoardWeatherTemp,
 .AQIDashboard,
 .DashBoardWeatherName,
@@ -47,7 +52,9 @@
 .AQIDASHBOARDDESCRIPTION {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust column width based on screen size */
 }
-
+.AQIDASHBOARDDESCRIPTIONBoxes{
+    margin-left: 20px;
+}
 .PersonalDashBoardDescriptions {
     font-size: 30px; /* Responsive font size */
     padding-top: 10%; /* Adjust padding */

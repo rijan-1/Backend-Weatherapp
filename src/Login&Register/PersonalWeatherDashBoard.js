@@ -120,6 +120,7 @@ useEffect(() => {
     <div className='PersonalWeatherDashBoardbackground'>
 
       <button className='LogOutButton' onClick={handleLogout}>Log Out</button>
+      <div className='Personaldashboardtitle'><h1>Current Location</h1></div>
       
             
                 <div className='ProfileCurrentWeatherContents'  style={{color: 'white'}}>
@@ -139,11 +140,11 @@ useEffect(() => {
                 <div className='DashboardDisplayBoxes'>
                 
                   <h3 className='DashboardDescriptionDescription'>Feels like</h3>
-                <h2>{weather.feels_like}C</h2>
+                <h2>{Math.round(weather.feels_like)}C</h2>
              </div>
              <div className='DashboardDisplayBoxes'>
              <h3 className='DashboardDescriptionDescription'>Max Temp</h3>
-                  <h2>{weather.temp_max}C</h2>
+                  <h2>{Math.round(weather.temp_max)}C</h2>
                 </div>
                
                 <div className='DashboardDisplayBoxes'>
@@ -158,32 +159,32 @@ useEffect(() => {
                 </div>
                 <div   className='ProfileCurrentWeatherContentsBox'>
                 <div  className='AQIDashboard'>
-                  <h1 style={{fontSize:'65px'}}>{AirQuality.aqi}AQI</h1>
+                  <h1 style={{fontSize:'65px'}}>{AirQuality.aqi} AQI</h1>
                  
                 </div>
                 <div className='AQIDASHBOARDDESCRIPTION'>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.co}co</h1>
+                    <h1>{Math.round(AirQuality.co)} co</h1>
 
                   </div>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.no}no</h1>
+                    <h1>{Math.round(AirQuality.no)} no</h1>
 
                   </div>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.no2}no2</h1>
+                    <h1>{Math.round(AirQuality.no2)} no2</h1>
 
                   </div>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.o3}o3</h1>
+                    <h1>{Math.round(AirQuality.o3)} o3</h1>
 
                   </div>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.so2}so2</h1>
+                    <h1>{Math.round(AirQuality.so2)} so2</h1>
 
                   </div>
                   <div className='AQIDASHBOARDDESCRIPTIONBoxes'>
-                    <h1>{AirQuality.pm10}pm10</h1>
+                    <h1>{Math.round(AirQuality.pm10)} pm10</h1>
 
                   </div>
 
