@@ -21,7 +21,10 @@
     align-items: end;
     border-radius: 20px;
 }
-
+.ErrorMessage{
+    color: rgb(252, 39, 39);
+    font-size: large;
+}
 
 .ProfileCurrentWeatherContents{
     display: flex;

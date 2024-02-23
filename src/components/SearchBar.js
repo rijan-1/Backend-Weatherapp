@@ -32,13 +32,12 @@ export const SearchBar = () => {
           <button style={{zIndex:'1000'}} onClick={changeUnits} className='btn'>C</button>
         </div>
     <div className ='menuContainer'>  </div>
-    <div className='ButtonToPagesBottomBar' style={{zIndex:'999', position:'absolute', top:'11%',display:'flex',justifyContent:'flex-end', }}>
-    <Link to='../Login'><button style={{borderTop:'solid white',borderBottom:'solid white',borderRadius:'10px'}} >Profile</button></Link>
-        <Link to='../Register' style={{borderTop:'solid white',borderBottom:'solid white',borderRadius:'20px'}}><button>Register</button></Link>
-    
+ 
+   
 
-    </div>
+   
     <div className='ButtonToPagesBottomBar'>
+    
       <Link to='/'>
         <button>Current Weather</button>
         </Link>
@@ -46,7 +45,8 @@ export const SearchBar = () => {
         <Link to='../pages/DailyWeather/DailyWeather'><button >Daily Weather</button></Link>
     
         <Link to='../pages/CurrentAirQuality'><button>Air quality Data</button></Link>
-        <Link to='../pages/HealthAdvice'><button>Health Advice</button></Link>
+        <Link to='../pages/HealthAdvice'><button>Health Advice</button></Link> <Link to='../Login'><button >Profile</button></Link>
+        <Link to='../Register' ><button>Register</button></Link>
        </div>
         
     </div> 

@@ -18,6 +18,7 @@ export const LoginForm = () => {
   const { isLoggedIn, setIsLoggedIn ,password, setPassword} = useContext(MyContext);
 // Track login status
 
+
 const CurrentLocationAirQuality = async (lat, lon) => {
   try {
     console.log({lat,lon})

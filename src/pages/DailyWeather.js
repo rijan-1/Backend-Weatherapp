@@ -98,7 +98,7 @@ useEffect(()=>{
 
                     <div className='Dailydate'> 
 
-                      <p>{weather.dt_txt}</p> 
+                      <p className='datedailyweather'>{weather.dt_txt}</p> 
 
                     </div> 
 

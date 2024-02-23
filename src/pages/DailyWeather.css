@@ -157,11 +157,15 @@
 
         position: relative;
         bottom: 100px;
+
  
 
     }
     .dailyWeatherSection{
         padding-top: 100px;
+    }
+    .datedailyweather{
+        display:none
     }
 }
 }

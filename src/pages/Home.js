@@ -96,7 +96,7 @@ useEffect(() => {
   
     CurrentWeatherData(); 
 
-  }, [units, citystate]); 
+  }, [units, GlobalCityName]); 
  
 
   return ( 
